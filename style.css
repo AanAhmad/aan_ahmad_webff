@@ -1,0 +1,592 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  list-style: none;
+}
+@font-face {
+  font-family: "GFF Latin";
+  src: url("font/GFF-Latin-Regular.eot");
+  src: local("GFF Latin Regular"), local("GFF-Latin-Regular"),
+    url("font/GFF-Latin-Regular.eot") format("embedded-opentype"),
+    url("font/GFF-Latin-Regular.woff2") format("woff2"),
+    url("font/GFF-Latin-Regular.woff") format("woff"),
+    url("font/GFF-Latin-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+html {
+  scroll-behavior: smooth;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+header {
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 33px 9%;
+  background: transparent;
+  transition: all 0.6s ease-in-out;
+}
+.logo {
+  font-size: 30px;
+  font-weight: 700;
+  color: white;
+}
+.navlist {
+  display: flex;
+}
+.navlist a {
+  color: white;
+  margin-left: 60px;
+  font-size: 15px;
+  font-weight: 600;
+  border-bottom: 2px solid transparent;
+  transition: all 0.55s ease;
+}
+.navlist a:hover {
+  border-bottom: 2px solid white;
+}
+#menu-icon {
+  color: white;
+  font-size: 35px;
+  z-index: 10001;
+  cursor: pointer;
+  display: none;
+}
+.char-ff {
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(
+    244.8deg,
+    #1d2045 0%,
+    #1d1e34 24.7%,
+    #19191f 73.5%
+  );
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 2rem;
+}
+section {
+  padding: 9% 19%;
+}
+.char-text h5 {
+  font-size: 14px;
+  font-weight: 400;
+  color: white;
+  margin-bottom: 40px;
+}
+.char-text h1 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 90px;
+  line-height: 1;
+  color: white;
+  margin: 0 0 45px;
+}
+.char-text h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 10px;
+}
+.char-text p {
+  color: white;
+  font-size: 15px;
+  line-height: 1.9;
+  margin-bottom: 40px;
+}
+.char-image {
+  margin: 30px 0;
+}
+.char-image img {
+  height: auto;
+  width: 420px;
+  position: relative;
+  left: 200px;
+}
+.char-text a {
+  display: inline-block;
+  color: white;
+  background-color: #233270;
+  border: 1px solid transparent;
+  padding: 12px 30px;
+  line-height: 1.4;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 10px;
+  text-transform: uppercase;
+  transition: all 0.25s ease;
+}
+.char-text a:hover {
+  background: transparent;
+  border: 1px solid white;
+  transform: translateX(8px);
+}
+.char-text a.ctaa {
+  background: transparent;
+  border: 1px solid white;
+  margin-left: 20px;
+}
+.char-text a.ctaa i {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.abt-chrono {
+  height: 100%;
+  width: 100%;
+  padding: 9% 12%;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 2rem;
+  background: linear-gradient(
+    284.76deg,
+    #1d2045 0%,
+    #1d1e34 24.7%,
+    #19191f 73.5%
+  );
+}
+.cr7-image {
+  width: 300px;
+}
+.cr7-image img {
+  width: auto;
+  height: 600px;
+  object-fit: cover;
+  position: relative;
+  left: 300px;
+}
+.desc-chrono {
+  color: white;
+}
+.desc-chrono h1 {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 600;
+  font-size: 50px;
+  margin: 40px 0;
+}
+.desc-chrono p {
+  font-size: 18px;
+  margin-bottom: 40px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+}
+.desc-chrono table {
+  background-color: #233270;
+  border: 1px solid #233270;
+}
+.desc-chrono th {
+  background-color: #233270;
+  padding: 12px;
+}
+.desc-chrono td {
+  background-color: #1d1e34;
+  padding: 9px;
+}
+.char-comb {
+  height: 100%;
+  width: 100%;
+  padding: 60px 12%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  background: linear-gradient(
+    284.76deg,
+    #1d2045 0%,
+    #1d1e34 24.7%,
+    #19191f 73.5%
+  );
+}
+.char-comb-text {
+  width: 100%;
+  color: white;
+  line-height: 1.4;
+  align-items: start;
+}
+.char-comb-text h1 {
+  font-size: 30px;
+  font-weight: 800;
+}
+.char-comb-image {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.chrono-char {
+  display: flex;
+  width: auto;
+  margin: 6px;
+  height: 220px;
+  border: 2px solid white;
+  overflow: hidden;
+}
+.kelly-char,
+.moco-char,
+.rafael-char {
+  display: flex;
+  width: auto;
+  height: 150px;
+  margin: 6px;
+  border: 2px solid white;
+  overflow: hidden;
+}
+.char {
+  margin-top: 20px;
+  margin-right: 20px;
+  width: 200px;
+  height: 700px;
+  object-fit: cover;
+  object-position: top center;
+}
+.char-detail {
+  color: white;
+  border-right: 2px solid white;
+  overflow: hidden;
+  width: 190px;
+}
+.chrono-char .char-detail {
+  width: 210px;
+}
+.char-detail h2,
+.char-detail h3 {
+  position: absolute;
+  font-family: "GFF Latin";
+  padding: 2px 8px;
+}
+.char-detail p {
+  display: flex;
+  position: relative;
+  bottom: 0;
+}
+.skill-detail,
+.skill-chrono {
+  color: white;
+  height: 43%;
+  display: flex;
+  gap: 20px;
+}
+.skill-desc {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+.skill-detail .name,
+.skill-chrono .name {
+  margin-left: 10px;
+}
+.active {
+  margin-left: 20px;
+  font-size: 18px;
+  padding: 4px 12px;
+  background-color: #008000;
+}
+.passive {
+  margin-left: 20px;
+  font-size: 14px;
+  padding: 8px 12px;
+  background-color: #005e80;
+}
+.skill-background {
+  background: #00000065;
+  width: 45px;
+  height: 45px;
+  margin-top: 24px;
+  margin-left: 25px;
+  padding: 4px;
+  rotate: 45deg;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.chrono-char .skill-background {
+  width: 70px;
+  height: 70px;
+  border: 2px solid gray;
+}
+.skill-background img {
+  rotate: -45deg;
+  vertical-align: middle;
+}
+.kelly-char .skill-background,
+.rafael-char .skill-background {
+  border: 1px solid red;
+}
+.moco-char .skill-background {
+  border: 1px solid green;
+}
+.weapon-list {
+  height: 100%;
+  width: 100%;
+  padding: 60px 12%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  background: linear-gradient(
+    284.76deg,
+    #1d2045 0%,
+    #1d1e34 24.7%,
+    #19191f 73.5%
+  );
+}
+.weapon-list-text {
+  color: white;
+  width: 100%;
+}
+.weapon-list-image {
+  margin: 8% 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16% 4%;
+}
+.weapon-container {
+  background-color: #58515843;
+  width: 100%;
+}
+.weapon-container img {
+  width: 100%;
+  padding: 20px 40px;
+}
+.weapon-container h4 {
+  font-family: "GFF Latin";
+  width: 100%;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 4px 9px;
+  background-color: #19191f7b;
+  color: white;
+}
+
+.icons {
+  position: absolute;
+  top: 50%;
+  padding: 0 9%;
+  transform: translateY(-50);
+}
+.icons i {
+  display: block;
+  margin: 20px 0;
+  font-size: 24px;
+  color: white;
+  transition: all 0.55s ease;
+}
+.icons i:hover {
+  color: #233270;
+  transform: translateY(-5px);
+}
+.scroll-down {
+  position: absolute;
+  bottom: 6%;
+  right: 9%;
+}
+.scroll-down i {
+  display: block;
+  padding: 12px;
+  font-size: 25px;
+  color: white;
+  background: #233270;
+  border-radius: 30px;
+  transition: all 0.5s ease;
+}
+.scroll-down i:hover {
+  transform: translateY(-5px);
+}
+@media (max-width: 1375px) {
+  section {
+    padding: 0 3%;
+    transition: 0.2s;
+  }
+  .char-text {
+    padding-top: 115px;
+    padding-left: 12%;
+  }
+  .char-image {
+    text-align: center;
+  }
+  .char-image img {
+    width: 380px;
+    height: auto;
+    left: 0;
+  }
+  .icons {
+    display: none;
+  }
+  .cr7-image img {
+    left: 100px;
+  }
+}
+@media (max-width: 900px) {
+  #menu-icon {
+    display: block;
+  }
+  .char-text {
+    margin-right: 30px;
+  }
+  .navlist {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    width: 300px;
+    height: 40vh;
+    background: #233270;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px 20px;
+    transition: all 0.55s ease;
+  }
+  .navlist a {
+    margin-left: 0;
+    display: block;
+    margin: 10px 0;
+  }
+  .navlist.open {
+    right: 0;
+  }
+  .char-ff {
+    height: 100%;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+  }
+  .cr7-image img {
+    display: none;
+  }
+  .abt-chrono {
+    display: flex;
+    flex-direction: column;
+  }
+  .weapon-list-image {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .kelly-char,
+  .moco-char,
+  .rafael-char {
+    height: 200px;
+  }
+  .chrono-char {
+    height: 240px;
+  }
+  .char {
+    height: 400px;
+    width: 100%;
+  }
+  .kelly-char,
+  .moco-char,
+  .rafael-char {
+    height: 300px;
+    flex-direction: column;
+  }
+  .chrono-char {
+    height: 340px;
+    flex-direction: column;
+  }
+  .chrono-char .char-detail,
+  .char-detail {
+    width: 100%;
+    height: 250px;
+    padding-bottom: 0;
+    border-right: 0;
+  }
+  .skill-desc {
+    margin-top: 0;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 100%;
+  }
+  .skill-detail,
+  .skill-chrono {
+    height: 80px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 0 12px;
+    border-top: 2px solid white;
+    margin: 0;
+  }
+  .skill-background,
+  .chrono-char .skill-background {
+    margin: 0;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+  }
+}
+@media (max-width: 600px) {
+  .char-text {
+    text-align: center;
+  }
+  .char-image img {
+    width: 300px;
+    height: auto;
+  }
+  .char-ff a {
+    margin: 12px;
+  }
+  .char-text a.ctaa {
+    margin: 10px;
+  }
+  .desc-chrono {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .desc-chrono h1,
+  p {
+    text-align: center;
+  }
+  .desc-chrono p {
+    font-size: 16px;
+  }
+  .char-comb-text {
+    text-align: center;
+  }
+  .skill-background,
+  .chrono-char .skill-background {
+    width: 25px;
+    height: 25px;
+  }
+  .skill-detail {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    height: 70px;
+  }
+  .skill-detail .name,
+  .skill-chrono .name {
+    font-size: 12px;
+    margin-left: 10px;
+  }
+  .weapon-list-text {
+    text-align: center;
+  }
+  .passive,
+  .active {
+    font-size: 10px;
+  }
+}
